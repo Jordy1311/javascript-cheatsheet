@@ -6,7 +6,7 @@
     comments
 */
 
-/* Log to console
+/* LOG TO CONSOLE
     console.log('Hello World');
     console.log('123');
     console.log('true');
@@ -30,6 +30,7 @@
 */
 
 
+// VAR, LET, CONST
 /* var, let, const
     var name = 'John Doe';
     console.log(name);
@@ -88,6 +89,8 @@
 */
 
 
+/*
+// DATA TYPES
 //  PRIMITIVE
 // String (quation marks)
     const name = 'John Doe';
@@ -117,4 +120,52 @@
 
 console.log(today);
 console.log(typeof today);
+*/
 
+
+/*
+// TYPE CONVERSION
+
+let val;
+
+// Number to string
+val = 5;
+val = String(5);
+val = String(4+4);
+// Bool to string
+val = String(true);
+// Date to string
+val = String(new Date());
+// Array to string
+val = String ([1,2,3,4]);
+
+// toSting()
+val = (5).toString();
+val = (true).toString();
+
+// String to number
+val = Number('5');
+val = Number(true);
+val = Number(false);
+val = Number(null);
+val = Number('Hello');
+val = Number([1,2,3]);
+
+val = parseInt('100.30');
+val = parseFloat('100.31');
+
+// Output
+// console.log(val);
+// console.log(typeof val);
+// //console.log(val.length);
+// console.log(val.toFixed());
+
+// Type co-ercion
+const val1 = String(5);
+const val2 = 6;
+const sum = Number(val1 + val2); // without "Number" it will pass a string
+
+
+console.log(sum);
+console.log(typeof sum);
+*/
