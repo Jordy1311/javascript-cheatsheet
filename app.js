@@ -1,3 +1,11 @@
+//  Single line comments
+
+/*
+    Multi
+    line
+    comments
+*/
+
 /* Log to console
     console.log('Hello World');
     console.log('123');
@@ -21,6 +29,7 @@
     console.timeEnd('Hello');
 */
 
+
 /* var, let, const
     var name = 'John Doe';
     console.log(name);
@@ -40,12 +49,13 @@
 
 /* Multi word vars
     var firstName = 'John'; // Camel case
+
     var first_name = 'Sarah'; // Underscore
     var FirstName = 'Tom'; // Pascal case
     var firstname = 'Grace'; // Not reccomended
 */
 
-/* LET
+/*LET
     let name; 
     name = 'John Doe';
     console.log(name);
@@ -75,9 +85,36 @@
     numbers.push(6);
 
     console.log(numbers);
-
-/*
-    Multi
-    line
-    comments
 */
+
+
+//  PRIMITIVE
+// String (quation marks)
+    const name = 'John Doe';
+//  Number (no quotation marks - quotation marks will make this a string)
+    const age =45;
+// Boolean
+    const hasKids = true;
+// Null
+    const car = null;
+// Undefined
+    let test;
+// Symbol
+    const sym = Symbol();
+
+
+// REFERENCE TYPES - Objects
+// Array
+    const hobbies = ['movies', 'music'];
+// Object literal
+    const address = {
+    city: 'Boston',
+    state: 'MA'
+}
+// Date
+    const today = new Date();
+    
+
+console.log(today);
+console.log(typeof today);
+
