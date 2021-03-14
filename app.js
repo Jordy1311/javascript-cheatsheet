@@ -408,3 +408,34 @@
     console.log(numbers);
     console.log(val);
 */
+
+
+
+/* DATES & TIME
+
+    let val;
+    const today = new Date();
+
+    let birthday = new Date('9-10-1981 11:25:00');
+    birthday = new Date('September 10 1981');
+    birthday = new Date('9/10/1981');
+
+    val = today.getMonth(); // this is 0-based
+    val = today.getDate(); // not 0-based?
+    val = today.getDay(); // S,M,T,W,T,F,S - also not 0-based
+    val = today.getFullYear();
+    val = today.getHours();
+    val = today.getMinutes();
+    val = today.getSeconds();
+    val = today.getMilliseconds();
+    val = today.getTime(); // amount of seconds passed since Jan 1st 1970
+
+    birthday.setMonth(2);
+    birthday.setDate(12);
+    birthday.setFullYear(1985);
+    birthday.setHours(3);
+    birthday.setMinutes(30);
+    birthday.setSeconds(25);
+
+    console.log(birthday);
+*/
