@@ -312,6 +312,7 @@
     }
 */
 
+
 /* TEMPLATE LITERALS
     const name = 'John';
     const age = 31;
@@ -410,7 +411,6 @@
 */
 
 
-
 /* DATES & TIME
 
     let val;
@@ -438,4 +438,98 @@
     birthday.setSeconds(25);
 
     console.log(birthday);
+*/
+
+
+/* IF STATEMENTS AND COMPARRISON OPERATORS
+    // if(something){
+    //     do something
+    // } else {
+    //     do something else
+    // }
+
+    const id = 100;
+
+    // // Equal to
+    // if(id == 100){
+    //     console.log('CORRECT');
+    // } else {
+    //     console.log('INCORRECT');
+    // }
+
+    // // Not equal to
+    // if(id != 101){
+    //     console.log('CORRECT');
+    // } else {
+    //     console.log('INCORRECT');
+    // }
+
+    // // Equal to value & type - "when in doubt/to avoid issues, use this"
+    // if(id === 100){
+    //     console.log('CORRECT');
+    // } else {
+    //     console.log('INCORRECT');
+    // }
+
+    // // Not equal to value & type
+    // if(id !== 100){
+    //     console.log('CORRECT');
+    // } else {
+    //     console.log('INCORRECT');
+    // }
+
+
+    // // Test if undefined
+    // if(typeof id !== 'undefined'){
+    //     console.log(`The ID is ${id}`);
+    // } else {
+    //     console.log('NO ID');
+    // }
+
+    // // Greater or less than
+    // if(id >= 100){
+    //     console.log('CORRECT');
+    // } else {
+    //     console.log('INCORRECT');
+    // }
+
+    // IF ELSE
+    const color = 'yellow';
+
+    // if(color === 'red'){
+    //     console.log('Color is red');
+    // } else if(color === 'blue'){
+    //     console.log('Color is blue');
+    // } else {
+    //     console.log('Color is not red or blue');
+    // }
+
+    // Logical operators
+    const name = 'Steve';
+    const age = 70;
+
+    // And &&
+    if(age > 0 && age < 12){
+        console.log(`${name} is a child`);
+    } else if(age >= 13 && age <= 19){
+        console.log(`${name} is a teenager`);
+    } else {
+        console.log(`${name} is an adult`);
+    }
+
+    // Or ||
+    if(age < 16 || age > 65){
+        console.log(`${name} can not run in race`);
+    } else {
+        console.log(`${name} can run in race`);
+    }
+
+    // Ternary Operator - short hand :)
+    console.log(id === 100 ? 'Correct' : 'Incorrect');
+
+    // Without braces
+    if(id === 101)
+        console.log('CORRECT');
+    else
+        console.log('INCORRECT');
 */
