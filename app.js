@@ -32,7 +32,7 @@
 */
 
 
-// VAR, LET, CONST
+/* VAR, LET, CONST
     /* var, let, const
         var name = 'John Doe';
         console.log(name);
@@ -58,7 +58,7 @@
         var firstname = 'Grace'; // Not reccomended
     */
 
-    /*LET
+    /* LET
         let name; 
         name = 'John Doe';
         console.log(name);
@@ -91,8 +91,7 @@
 */
 
 
-/*
-// DATA TYPES
+/* DATA TYPES
     //  PRIMITIVE
     // String (quation marks)
         const name = 'John Doe';
@@ -125,8 +124,7 @@
 */
 
 
-/*
-// TYPE CONVERSION
+/* TYPE CONVERSION
     let val;
 
     // Number to string
@@ -172,8 +170,7 @@
 */
 
 
-/*
-// NUMBERS AND THE MATH OBJECT
+/* NUMBERS AND THE MATH OBJECT
     const num1 = 100;
     const num2 = 50;
     let val;
@@ -204,11 +201,10 @@
     val = Math.floor(Math.random() * 20 +1);
 
     console.log(val);
- */
+*/
 
 
-/*
-// STRING METHODS AND CONCATINATION
+/* STRING METHODS AND CONCATINATION
     const firstName = 'Williams';
     const lastName = 'Johnson';
     const age = 36;
@@ -271,11 +267,10 @@
     val = str.includes('foo');
 
     console.log(val);
- */
+*/
 
 
-/*
-    // OBJECT LITERALS
+/* OBJECT LITERALS
     const person = {
         firstName: 'Steve',
         lastName: 'Smith',
@@ -317,8 +312,7 @@
     }
 */
 
-/*
-// TEMPLATE LITERALS
+/* TEMPLATE LITERALS
     const name = 'John';
     const age = 31;
     const job = 'Web Developer';
@@ -356,8 +350,7 @@
 */
 
 
-/*
-// ARRAYS AND ARRAY METHODS
+/* ARRAYS AND ARRAY METHODS
     // Create some arrays
     const numbers = [43,56,33,23,44,36,5];
     const numbers2 = new Array(22,45,33,76,54);
