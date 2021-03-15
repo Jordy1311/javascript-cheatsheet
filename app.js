@@ -581,121 +581,122 @@
 
 /* FUNCTION DECLARATIONS & EXPRESSIONS
     // Declarations
-    function greet(firstName = 'John', lastName = 'Doe'){ //String here (is default) accomplishes as 2 if statements below
-        // if(typeof firstName === 'undefined'){firstName = 'John'}
-        // if(typeof lastName === 'undefined'){lastName = 'Doe'}
+        function greet(firstName = 'John', lastName = 'Doe'){ //String here (is default) accomplishes as 2 if statements below
+            // if(typeof firstName === 'undefined'){firstName = 'John'}
+            // if(typeof lastName === 'undefined'){lastName = 'Doe'}
 
-        //console.log('Hello');
+            //console.log('Hello');
 
-        return 'Hello ' + firstName + ' ' + lastName;
-    }
+            return 'Hello ' + firstName + ' ' + lastName;
+        }
 
-    // console.log(greet('Steve''Smith'));
+        // console.log(greet('Steve''Smith'));
 
     // Function Expressions
-    const square = function(x = 3){ // 3 here is default
-        return x*x;
-    };
+        const square = function(x = 3){ // 3 here is default
+            return x*x;
+        };
 
-    // console.log(square(8));
+        // console.log(square(8));
 
     // Immidiatley Invokable Function Expressions - IIFEs
-    // (function(){
-    //     console.log('IFFEE Ran..')
-    // })();
+        // (function(){
+        //     console.log('IFFEE Ran..')
+        // })();
 
-    // (function(name){
-    //     console.log('Hello ' + name)
-    // })('Brad');
+        // (function(name){
+        //     console.log('Hello ' + name)
+        // })('Brad');
 
     // Property Methods
-    const todo = {
-        add: function(){
-            console.log('Add todo..');
-        },
-        edit: function(id){
-            console.log(`Edit todo ${id}`);
+        const todo = {
+            add: function(){
+                console.log('Add todo..');
+            },
+            edit: function(id){
+                console.log(`Edit todo ${id}`);
+            }
         }
-    }
 
-    todo.delete = function(){
-        console.log('Delete todo...');
-    }
+        todo.delete = function(){
+            console.log('Delete todo...');
+        }
 
-    todo.add();
-    todo.edit(22);
-    todo.delete();
+        todo.add();
+        todo.edit(22);
+        todo.delete();
 */
 
 
-// GENERAL LOOPS
+/* GENERAL LOOPS
     // For Loop - i will start at 0, loop only works until i is no longer < 10, i will increase by 1 each loop
-    // for(let i = 0; i < 10; i++){
-    //     if(i === 2){
-    //         console.log('2 is my favorite number');
-    //         continue; // This stops the loop here and takes it to the next iteration
-    //     }
+        // for(let i = 0; i < 10; i++){
+        //     if(i === 2){
+        //         console.log('2 is my favorite number');
+        //         continue; // This stops the loop here and takes it to the next iteration
+        //     }
 
-    //     if(i === 5){
-    //         console.log('Stopped the loop!');
-    //         break;
-    //     }
+        //     if(i === 5){
+        //         console.log('Stopped the loop!');
+        //         break;
+        //     }
 
-    //     console.log('Number ' + i);
-    // }
+        //     console.log('Number ' + i);
+        // }
 
     // While Loop
-    // let i = 0;
+        // let i = 0;
 
-    // while(i < 10){
-    //     console.log('Number ' + i);
-    //     i++;
-    // }
+        // while(i < 10){
+        //     console.log('Number ' + i);
+        //     i++;
+        // }
 
     // Do While Loop - "Will always run once no matter what" will then stop if "while" is not met
-    // let i = 0;
+        // let i = 0;
 
-    // do {
-    //     console.log('Number ' + i);
-    //     i++;
-    // }
+        // do {
+        //     console.log('Number ' + i);
+        //     i++;
+        // }
 
-    // while(i < 10);
+        // while(i < 10);
 
     // Loop through array
-    const cars = ['Ford', 'Chevy', 'Honda', 'Toyota'];
+        const cars = ['Ford', 'Chevy', 'Honda', 'Toyota'];
 
-    // for(let i = 0; i < cars.length; i++){
-    //     console.log(cars[i]);
-    // }
+        // for(let i = 0; i < cars.length; i++){
+        //     console.log(cars[i]);
+        // }
 
-    // // forEach is much more cleaner for an array than a for loop
-    // cars.forEach(function(car, index, array){
-    //     console.log(`${index} : ${car}`);
-    //     console.log(array);
-    // });
+        // // forEach is much more cleaner for an array than a for loop
+        // cars.forEach(function(car, index, array){
+        //     console.log(`${index} : ${car}`);
+        //     console.log(array);
+        // });
 
     // Map
-    // const users = [
-    //     {id: 1, name:'John'},
-    //     {id: 2, name:'Sarah'},
-    //     {id: 3, name:'Karen'},
-    //     {id: 4, name:'Steve'}
-    // ];
+        // const users = [
+        //     {id: 1, name:'John'},
+        //     {id: 2, name:'Sarah'},
+        //     {id: 3, name:'Karen'},
+        //     {id: 4, name:'Steve'}
+        // ];
 
-    // const ids = users.map(function(user){
-    //     return user.id;
-    // });
+        // const ids = users.map(function(user){
+        //     return user.id;
+        // });
 
-    // console.log(ids);
+        // console.log(ids);
 
     // For In Loop
-    const user = {
-        firstName: 'John',
-        lastName: 'Doe',
-        age: 40
-    }
+        const user = {
+            firstName: 'John',
+            lastName: 'Doe',
+            age: 40
+        }
 
-    for(let x in user){
-        console.log(`${x} : ${user[x]}`);
-    }
+        for(let x in user){
+            console.log(`${x} : ${user[x]}`);
+        }
+*/
