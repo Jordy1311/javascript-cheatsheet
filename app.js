@@ -312,6 +312,7 @@
     }
 */
 
+
 /* TEMPLATE LITERALS
     const name = 'John';
     const age = 31;
@@ -408,3 +409,171 @@
     console.log(numbers);
     console.log(val);
 */
+
+
+/* DATES & TIME
+
+    let val;
+    const today = new Date();
+
+    let birthday = new Date('9-10-1981 11:25:00');
+    birthday = new Date('September 10 1981');
+    birthday = new Date('9/10/1981');
+
+    val = today.getMonth(); // this is 0-based
+    val = today.getDate(); // not 0-based?
+    val = today.getDay(); // S,M,T,W,T,F,S - also not 0-based
+    val = today.getFullYear();
+    val = today.getHours();
+    val = today.getMinutes();
+    val = today.getSeconds();
+    val = today.getMilliseconds();
+    val = today.getTime(); // amount of seconds passed since Jan 1st 1970
+
+    birthday.setMonth(2);
+    birthday.setDate(12);
+    birthday.setFullYear(1985);
+    birthday.setHours(3);
+    birthday.setMinutes(30);
+    birthday.setSeconds(25);
+
+    console.log(birthday);
+*/
+
+
+/* IF STATEMENTS AND COMPARRISON OPERATORS
+    // if(something){
+    //     do something
+    // } else {
+    //     do something else
+    // }
+
+    const id = 100;
+
+    // // Equal to
+    // if(id == 100){
+    //     console.log('CORRECT');
+    // } else {
+    //     console.log('INCORRECT');
+    // }
+
+    // // Not equal to
+    // if(id != 101){
+    //     console.log('CORRECT');
+    // } else {
+    //     console.log('INCORRECT');
+    // }
+
+    // // Equal to value & type - "when in doubt/to avoid issues, use this"
+    // if(id === 100){
+    //     console.log('CORRECT');
+    // } else {
+    //     console.log('INCORRECT');
+    // }
+
+    // // Not equal to value & type
+    // if(id !== 100){
+    //     console.log('CORRECT');
+    // } else {
+    //     console.log('INCORRECT');
+    // }
+
+
+    // // Test if undefined
+    // if(typeof id !== 'undefined'){
+    //     console.log(`The ID is ${id}`);
+    // } else {
+    //     console.log('NO ID');
+    // }
+
+    // // Greater or less than
+    // if(id >= 100){
+    //     console.log('CORRECT');
+    // } else {
+    //     console.log('INCORRECT');
+    // }
+
+    // IF ELSE
+    const color = 'yellow';
+
+    // if(color === 'red'){
+    //     console.log('Color is red');
+    // } else if(color === 'blue'){
+    //     console.log('Color is blue');
+    // } else {
+    //     console.log('Color is not red or blue');
+    // }
+
+    // Logical operators
+    const name = 'Steve';
+    const age = 70;
+
+    // And &&
+    if(age > 0 && age < 12){
+        console.log(`${name} is a child`);
+    } else if(age >= 13 && age <= 19){
+        console.log(`${name} is a teenager`);
+    } else {
+        console.log(`${name} is an adult`);
+    }
+
+    // Or ||
+    if(age < 16 || age > 65){
+        console.log(`${name} can not run in race`);
+    } else {
+        console.log(`${name} can run in race`);
+    }
+
+    // Ternary Operator - short hand :)
+    console.log(id === 100 ? 'Correct' : 'Incorrect');
+
+    // Without braces
+    if(id === 101)
+        console.log('CORRECT');
+    else
+        console.log('INCORRECT');
+*/
+
+
+// SWITCHES
+    const color = 'yellow';
+
+    switch(color){
+        case 'red':
+            console.log('Color is red');
+            break;
+        case 'blue':
+            console.log('Color is blue');
+            break;
+        default:
+            console.log('Color is not red or blue');
+            break;
+    }
+
+    let day;
+
+    switch(new Date().getDay()){
+        case 0:
+            day = 'Sunday';
+            break;
+        case 1:
+            day = 'Monday';
+            break;
+        case 2:
+            day = 'Tuesday';
+            break;
+        case 3:
+            day = 'Wednesday';
+            break;
+        case 4:
+            day = 'Thursday';
+            break;
+        case 5:
+            day = 'Friday';
+            break;
+        case 6:
+            day = 'Saturday';
+            break;
+    }
+
+    console.log(`Today is ${day}`);
