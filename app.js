@@ -758,5 +758,38 @@
         val = window.navigator.language;
 
     console.log(val);
-    */
+*/
 
+/* BLOCK SCOPE WITH LET & CONST
+    // Global Scope
+        var a = 1;
+        let b = 2;
+        const c = 3;
+
+        // function test() {
+        //     var a = 4;
+        //     let b = 5;
+        //     const c = 6;
+
+        //     console.log('Function Scope: ', a, b, c);
+        // }
+        // test();
+
+        // if(true) {
+        //     // Block Scope
+        //     var a = 4;
+        //     let b = 5;
+        //     const c = 6;
+            
+        //     console.log('If Scope: ', a, b, c); // Console.log for this is kinda weird because Var changed but Let and Const have not
+        // }
+
+        // for(var a = 0; a < 10;  a++){
+        //     console.log(`Loop a:  ${a}`); // Notice the weirdness when changing from Let to Var
+        // }
+
+        console.log('Global Scope: ', a, b, c);
+
+        // Summary: Var has a global scope and will change all Vars of the same name. Let and Const have block level scope and will only change on a block level basis
+*/
+        
