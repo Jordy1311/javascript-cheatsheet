@@ -687,7 +687,7 @@
         //     return user.id;
         // });
 
-        // console.log(ids);
+        // console.log(ids); 
 
     // For In Loop
         const user = {
@@ -700,3 +700,96 @@
             console.log(`${x} : ${user[x]}`);
         }
 */
+
+
+/* WINDOW METHODS / OBJECTS / PROPERTIES
+    // Alert - this also works fine without the 'window' operator
+        // window.alert('Hello World');
+
+    // Prompt
+        // const input = prompt();
+        // alert(input);
+
+    // Confirm
+        // if(confirm('Are you sure?')){
+        //     console.log('YES');
+        // }   else {
+        //     console.log('NO');
+        // }
+
+    let val;
+    // Outer height and width - includes whole window
+        val = window.outerHeight;
+        val = window.outerWidth;
+
+    // Inner height and width - includes only what you see of site
+        val = window.innerHeight;
+        val = window.innerWidth;
+
+    // Scroll points (X and Y) - good for sites where you have animations happen as you scroll
+        val = window.scrollY;
+        val = window.scrollX;
+
+    //  Location Object
+        val = window.location; // You can see what you can get from this object by clicking down-arrow
+
+        val = window.location.hostname; // Normal address would show the domain name here
+        val = window.location.port;
+        val = window.location.href; // Whole URL
+        val = window.location.search;
+    
+    // Redirect
+        // window.location.href = 'http://google.com';
+    // Reload
+        // window.location.reload();
+
+    // History Object
+        // window.history.go(); // <-- Will go to the index value input of browser's history
+        // val = window.history.length; // Will show length of history for current session?
+
+    // Navigator Object
+        val = window.navigator; // appCodeName, appName, appVersion, bluetooth, clipboard, connection, geolocation, platform
+
+        val = window.navigator.appName;
+        val = window.navigator.appVersion;
+        val = window.navigator.userAgent;
+        val = window.navigator.platform; // "MacIntel haha - Could have a site do different things for PC/Mac..."
+        val = window.navigator.vendor;
+        val = window.navigator.language;
+
+    console.log(val);
+*/
+
+/* BLOCK SCOPE WITH LET & CONST
+    // Global Scope
+        var a = 1;
+        let b = 2;
+        const c = 3;
+
+        // function test() {
+        //     var a = 4;
+        //     let b = 5;
+        //     const c = 6;
+
+        //     console.log('Function Scope: ', a, b, c);
+        // }
+        // test();
+
+        // if(true) {
+        //     // Block Scope
+        //     var a = 4;
+        //     let b = 5;
+        //     const c = 6;
+            
+        //     console.log('If Scope: ', a, b, c); // Console.log for this is kinda weird because Var changed but Let and Const have not
+        // }
+
+        // for(var a = 0; a < 10;  a++){
+        //     console.log(`Loop a:  ${a}`); // Notice the weirdness when changing from Let to Var
+        // }
+
+        console.log('Global Scope: ', a, b, c);
+
+        // Summary: Var has a global scope and will change all Vars of the same name. Let and Const have block level scope and will only change on a block level basis
+*/
+        
