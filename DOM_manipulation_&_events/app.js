@@ -80,6 +80,7 @@
     document.querySelector('li:nth-child(even)').style.background = '#f4f4f4';  // will only select first "even"
 */
 
+
 /* DOM SELECTORS FOR MULTIPLE ELEMENTS
   // document.getElementsByClassName  
     // const items = document.getElementsByClassName('collection-item');
@@ -132,3 +133,68 @@
 
     console.log(items);
 */
+
+
+/* TRAVERSING THE DOM
+  let val;
+
+  const list = document.querySelector('ul.collection');
+  const listItem = document.querySelector('li.collection-item:first-child');
+
+  val = listItem;
+  val = list;
+
+  // Get child nodes (Nodelist) - includes line-breaks at "text" items
+    val = list.childNodes;
+    val = list.childNodes[0];
+    val = list.childNodes[0].nodeName;
+    val = list.childNodes[1].nodeType;
+
+    // 1 - Element
+    // 2 - Attribute (deprecated)
+    // 3 - Text node
+    // 8 - Comment
+    // 9 - Document itself
+    // 10 - Doctype
+
+  // Get children element nodes (HTML collection) - doesnt include line-breaks at "text" items
+    val = list.children;
+    val = list.children[1]; // Can select
+    list.children[1].textContent  = 'Hello';
+
+  // Children of children
+    val = list.children[3].children;
+    val = list.children[3].children[0].id = 'test-link';
+    val = list.children[3].children[0];
+
+  // First child
+    val = list.firstChild; // Like childNodes - will give you line-breaks as "text" items
+    val = list.firstElementChild; // You can instead use this is you only want elements
+
+  // Last child
+    val = list.lastChild; // As above for firstChild and firstElementChild
+    val = list.lastElementChild; 
+
+  // Count child elements
+    val = list.childElementCount;
+
+
+  // Get parent node
+    val = listItem.parentNode;
+    val = listItem.parentElement; // In most cases Element will be the same as Node
+    val = listItem.parentElement.parentElement; // Parent of parent
+
+  
+  // Get next sibling
+    val = listItem.nextSibling; // Like nodes, will include line-breaks as "text" items
+    val = listItem.nextElementSibling;
+    val = listItem.nextElementSibling.nextElementSibling;
+
+  // Get previous sibling
+    val = listItem.previousSibling; // Like nodes, will include line-breaks as "text" items
+    val = listItem.previousElementSibling;
+  
+  // You can link together to move around
+
+  console.log(val);
+  */
