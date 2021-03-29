@@ -231,3 +231,66 @@
 
   console.log(li);
 */
+
+
+/* REMOVING & REPLACING ELEMENTS
+  // REPLACE ELEMENT
+    // Create Element
+      const newHeading = document.createElement('h2');
+    // Add id
+      newHeading.id = 'task-title';
+    // New text node
+      newHeading.appendChild(document.createTextNode('Task List - Created in Javascript'));
+
+    // Get old heading to be replaced
+      const oldHeading = document.getElementById('task-title');
+    // Get parent 
+      const cardAction = document.querySelector('.card-action');
+
+    // Replace oldHeading with newHeading
+      cardAction.replaceChild(newHeading, oldHeading);
+
+      // console.log(newHeading)
+  
+  
+  // REMOVE ELEMENT
+    const lis = document.querySelectorAll('li');
+    const list = document.querySelector('ul');
+
+    // Remove list item
+      lis[0].remove();
+
+    // Remove child element
+      list.removeChild(lis[3]);
+
+  // CLASSES & ATTR
+    const firstLi = document.querySelector('li:first-child');
+    const link = firstLi.children[0];
+
+    let val;
+
+    // Classes
+      val = link.className; // Shows classes
+      val = link.classList; // DOM token list of classes
+      val = link.classList[0];
+      link.classList.add('test'); // Add class
+      val = link;
+      link.classList.remove('test'); // Remove class
+      val = link;
+    
+    // Attributes
+      val = link.getAttribute('href'); // Returns attribute - href
+      val = link.setAttribute('href', 'http://google.com'); // Changes attribute - href
+      val = link.hasAttribute('href'); // Tests for attribute (true/false)
+
+      link.setAttribute('title', 'Google'); // Add attribute - title
+      val = link.hasAttribute('title');
+      link.removeAttribute('title'); // Remove attribute - title
+      val = link.hasAttribute('title');
+
+    console.log(val);
+    console.log(link);
+*/
+
+
+//
