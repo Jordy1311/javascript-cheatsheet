@@ -293,4 +293,47 @@
 */
 
 
-//
+/* EVENT LISTENERS
+  // Event listener with anon. function
+    // document.querySelector('.clear-tasks').addEventListener('click',
+    // function(e){
+    //   console.log('"Clear Tasks" has been clicked!')
+
+    //   e.preventDefault(); // This can be replaced with "#" but if you need an address for the link you will need to prevent default action
+    //   });
+
+  // Event listener with named function
+    document.querySelector('.clear-tasks').addEventListener('click', onClick); // Different events: click/mouseover
+
+    function onClick(e) {
+      // console.log('"Clear Tasks" has been clicked using onClick();');
+      e.preventDefault();
+      let val;
+
+      val = e;
+
+      // Event target element
+        val = e.target; // This gives the target element of onClick()
+        val = e.target.id; // Can get id of the target
+        val = e.target.className; 
+        val = e.target.classList; // Provides the above in a DOM Token List
+
+        // e.target.innerText = 'Hello'; // Changes the inner text of e.target (event's target when onClick()
+      
+      // Event type
+        val = e.type;
+
+      // Event timestamp
+        val = e.timeStamp;
+
+      // Event Coords reletive to the window (where in the window)
+        val = e.clientY;
+        val = e.clientX;
+
+      // Event Coords reletive to the element (where in the element)
+        val = e.offsetY;
+        val = e.offsetX;
+
+    console.log(val);
+    };
+    */
