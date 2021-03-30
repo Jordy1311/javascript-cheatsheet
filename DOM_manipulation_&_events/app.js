@@ -375,3 +375,50 @@
       document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 40)`;
     }
 */
+
+
+/* KEYBOARD & INPUT EVENTS
+  const form = document.querySelector('form');
+  const taskInput = document.getElementById('task');
+  const heading = document.querySelector('h5');
+  const select = document.querySelector('select');
+
+  // Clear an input
+    taskInput.value = '';
+
+  // form.addEventListener('submit', runEvent);
+
+  // EVENTS
+    // Keydown - as the key is pressed down
+      // taskInput.addEventListener('keydown', runEvent);
+    // Keyup - as the key is let go
+      // taskInput.addEventListener('keyup', runEvent);
+    // Keypress
+      // taskInput.addEventListener('keypress', runEvent);
+    // Focus - opposite is blur
+      // taskInput.addEventListener('focus', runEvent);
+    // Blur - opposite is focus
+      // taskInput.addEventListener('blur', runEvent);
+    // Cut 
+      // taskInput.addEventListener('cut', runEvent);
+    // Paste
+      // taskInput.addEventListener('paste', runEvent);
+    // Input - any type of input (cut, paste, typing, deleting)
+      // taskInput.addEventListener('input', runEvent);
+    // Change event - on select elements lines 27-31 in index.html (needed to comment out materialise to see this)
+      // select.addEventListener('change', runEvent);
+
+  function runEvent(e) {
+    console.log(`EVENT TYPE: ${e.type}`);
+
+    // Log typed value
+      // console.log(e.target.value);
+
+    // Input typed value into an element
+      // heading.innerText = e.target.value
+    // Get input value
+      // console.log(taskInput.value);
+
+    // e.preventDefault();
+  }
+*/
