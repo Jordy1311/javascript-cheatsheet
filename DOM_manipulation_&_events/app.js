@@ -293,7 +293,7 @@
 */
 
 
-/* EVENT LISTENERS
+/* EVENT LISTENERS & THE EVENT OBJECT
   // Event listener with anon. function
     // document.querySelector('.clear-tasks').addEventListener('click',
     // function(e){
@@ -336,4 +336,42 @@
 
     console.log(val);
     };
-    */
+*/
+
+
+/* MOUSE EVENTS
+  const clearBtn = document.querySelector('.clear-tasks');
+  const card = document.querySelector('.card');
+  const heading = document.querySelector('h5');
+
+  // Click
+    // clearBtn.addEventListener('click', runEvent);
+  // Doubleclick
+    // clearBtn.addEventListener('dblclick', runEvent);
+
+  // Mousedown - clicking and holding
+    // clearBtn.addEventListener('mousedown', runEvent);
+  // Mouseup - runs as click is released
+    // clearBtn.addEventListener('mouseup', runEvent);
+
+  // Mouseenter - entering main element - can be used in other situations other than buttons??
+    // card.addEventListener('mouseenter', runEvent);
+  // Mouseleave - leaving main element
+    // card.addEventListener('mouseleave', runEvent);
+  // Mouseover - mouse over specifically that element and none other
+    // card.addEventListener('mouseover', runEvent);
+  // Mouseout - mouse leaving specified element even if on another element
+    // card.addEventListener('mouseout', runEvent);
+
+  // Mousemove - px count movements within element
+    card.addEventListener('mousemove', runEvent);
+  
+  // Event handler
+    function runEvent(e) {
+      console.log(`EVENT TYPE: ${e.type}`);
+
+      heading.textContent = `MouseX: ${e.offsetX} MouseY: ${e.offsetY}`;
+
+      document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 40)`;
+    }
+*/
