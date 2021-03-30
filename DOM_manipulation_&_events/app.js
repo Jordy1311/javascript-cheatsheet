@@ -178,7 +178,6 @@
   // Count child elements
     val = list.childElementCount;
 
-
   // Get parent node
     val = listItem.parentNode;
     val = listItem.parentElement; // In most cases Element will be the same as Node
@@ -213,7 +212,6 @@
   // Add attribute
     li.setAttribute('title', 'New Item');
 
-  
   // Create text node and append
     li.appendChild(document.createTextNode('List Item - Created with Javascript'));
 
@@ -251,7 +249,6 @@
       cardAction.replaceChild(newHeading, oldHeading);
 
       // console.log(newHeading)
-  
   
   // REMOVE ELEMENT
     const lis = document.querySelectorAll('li');
