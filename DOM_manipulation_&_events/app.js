@@ -422,3 +422,48 @@
     // e.preventDefault();
   }
 */
+
+
+/* EVENT BUBBLING & DELEGATION
+  // EVENT BUBBLING
+  // In this example, if you click on a lower down element it will also trigger the elements above it
+    // document.querySelector('.card-title').addEventListener('click', 
+    //   function() {
+    //     console.log('card title');
+    //   });
+    
+    // document.querySelector('.card-content').addEventListener('click', 
+    // function() {
+    //   console.log('card content');
+    // });
+
+    // document.querySelector('.card').addEventListener('click', 
+    // function() {
+    //   console.log('card');
+    // });
+
+    // document.querySelector('.col').addEventListener('click', 
+    // function() {
+    //   console.log('col');
+    // });
+
+  // EVENT DELEGATION
+  // Put the listener on the parent and then have a condition to find the target and then put the function there
+    // const delItem = document.querySelector('.delete-item');
+    // delItem.addEventListener('click', deleteItem);
+
+    document.body.addEventListener('click', deleteItem);
+
+    function deleteItem(e) {
+      // This works but the className has to be exactly what we are searching for
+        // if(e.target.parentElement.className === "delete-item secondary-content") {
+        //   console.log('delete item');
+        // }
+
+      // This works better as it just has to contain this class
+        if(e.target.parentElement.classList.contains('delete-item')) {
+          console.log('delete item');
+          e.target.parentElement.parentElement.remove();
+        }
+    }
+*/
