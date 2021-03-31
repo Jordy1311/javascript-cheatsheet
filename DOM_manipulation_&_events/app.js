@@ -178,7 +178,6 @@
   // Count child elements
     val = list.childElementCount;
 
-
   // Get parent node
     val = listItem.parentNode;
     val = listItem.parentElement; // In most cases Element will be the same as Node
@@ -213,7 +212,6 @@
   // Add attribute
     li.setAttribute('title', 'New Item');
 
-  
   // Create text node and append
     li.appendChild(document.createTextNode('List Item - Created with Javascript'));
 
@@ -251,7 +249,6 @@
       cardAction.replaceChild(newHeading, oldHeading);
 
       // console.log(newHeading)
-  
   
   // REMOVE ELEMENT
     const lis = document.querySelectorAll('li');
@@ -374,4 +371,149 @@
 
       document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 40)`;
     }
+*/
+
+
+/* KEYBOARD & INPUT EVENTS
+  const form = document.querySelector('form');
+  const taskInput = document.getElementById('task');
+  const heading = document.querySelector('h5');
+  const select = document.querySelector('select');
+
+  // Clear an input
+    taskInput.value = '';
+
+  // form.addEventListener('submit', runEvent);
+
+  // EVENTS
+    // Keydown - as the key is pressed down
+      // taskInput.addEventListener('keydown', runEvent);
+    // Keyup - as the key is let go
+      // taskInput.addEventListener('keyup', runEvent);
+    // Keypress
+      // taskInput.addEventListener('keypress', runEvent);
+    // Focus - opposite is blur
+      // taskInput.addEventListener('focus', runEvent);
+    // Blur - opposite is focus
+      // taskInput.addEventListener('blur', runEvent);
+    // Cut 
+      // taskInput.addEventListener('cut', runEvent);
+    // Paste
+      // taskInput.addEventListener('paste', runEvent);
+    // Input - any type of input (cut, paste, typing, deleting)
+      // taskInput.addEventListener('input', runEvent);
+    // Change event - on select elements lines 27-31 in index.html (needed to comment out materialise to see this)
+      // select.addEventListener('change', runEvent);
+
+  function runEvent(e) {
+    console.log(`EVENT TYPE: ${e.type}`);
+
+    // Log typed value
+      // console.log(e.target.value);
+
+    // Input typed value into an element
+      // heading.innerText = e.target.value
+    // Get input value
+      // console.log(taskInput.value);
+
+    // e.preventDefault();
+  }
+*/
+
+
+/* EVENT BUBBLING & DELEGATION
+  // EVENT BUBBLING
+  // In this example, if you click on a lower down element it will also trigger the elements above it
+    // document.querySelector('.card-title').addEventListener('click', 
+    //   function() {
+    //     console.log('card title');
+    //   });
+    
+    // document.querySelector('.card-content').addEventListener('click', 
+    // function() {
+    //   console.log('card content');
+    // });
+
+    // document.querySelector('.card').addEventListener('click', 
+    // function() {
+    //   console.log('card');
+    // });
+
+    // document.querySelector('.col').addEventListener('click', 
+    // function() {
+    //   console.log('col');
+    // });
+
+  // EVENT DELEGATION
+  // Put the listener on the parent and then have a condition to find the target and then put the function there
+    // const delItem = document.querySelector('.delete-item');
+    // delItem.addEventListener('click', deleteItem);
+
+    document.body.addEventListener('click', deleteItem);
+
+    function deleteItem(e) {
+      // This works but the className has to be exactly what we are searching for
+        // if(e.target.parentElement.className === "delete-item secondary-content") {
+        //   console.log('delete item');
+        // }
+
+      // This works better as it just has to contain this class
+        if(e.target.parentElement.classList.contains('delete-item')) {
+          console.log('delete item');
+          e.target.parentElement.parentElement.remove();
+        }
+    }
+*/
+
+
+/* LOCAL & SESSION STORAGE
+  // What you set as a value has to be a string - JSON.stringify then JSON.parse
+
+  // set local storeage item
+    // localStorage.setItem('name', 'John');
+    // localStorage.setItem('age', '30');
+
+  // set session storeage item
+    // sessionStorage.setItem('name', 'Beth');
+
+  // remove from storage
+    // localStorage.removeItem('name');
+
+  // get from storage - you can put in variable
+    // const name = localStorage.getItem('name');
+    // const age = localStorage.getItem('age');
+
+    // clear local storage
+    //   localStorage.clear();
+  
+    // console.log(name, age);
+
+  // Created listener on "Add Task" button which logs to local storage a string (array which was JSONed) but also checked if there was already a list in which case it would add to it
+  document.querySelector('form').addEventListener('submit', 
+    function(e) {
+      const task = document.getElementById('task').value;
+      
+      let tasks;
+
+      if(localStorage.getItem('tasks') === null) {
+        tasks = [];
+      } else {
+        tasks = JSON.parse(localStorage.getItem('tasks'));
+      }
+
+      tasks.push(task);
+      
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+
+      alert('Task saved!');
+
+      e.preventDefault();
+    });
+  
+  // forEach looping through the array (string which was JSONed) and console.loging
+    const tasks = JSON.parse(localStorage.getItem('tasks'));
+
+    tasks.forEach(function(task) {
+      console.log(task);
+    });
 */
