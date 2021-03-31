@@ -464,3 +464,56 @@
         }
     }
 */
+
+
+/* LOCAL & SESSION STORAGE
+  // What you set as a value has to be a string - JSON.stringify then JSON.parse
+
+  // set local storeage item
+    // localStorage.setItem('name', 'John');
+    // localStorage.setItem('age', '30');
+
+  // set session storeage item
+    // sessionStorage.setItem('name', 'Beth');
+
+  // remove from storage
+    // localStorage.removeItem('name');
+
+  // get from storage - you can put in variable
+    // const name = localStorage.getItem('name');
+    // const age = localStorage.getItem('age');
+
+    // clear local storage
+    //   localStorage.clear();
+  
+    // console.log(name, age);
+
+  // Created listener on "Add Task" button which logs to local storage a string (array which was JSONed) but also checked if there was already a list in which case it would add to it
+  document.querySelector('form').addEventListener('submit', 
+    function(e) {
+      const task = document.getElementById('task').value;
+      
+      let tasks;
+
+      if(localStorage.getItem('tasks') === null) {
+        tasks = [];
+      } else {
+        tasks = JSON.parse(localStorage.getItem('tasks'));
+      }
+
+      tasks.push(task);
+      
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+
+      alert('Task saved!');
+
+      e.preventDefault();
+    });
+  
+  // forEach looping through the array (string which was JSONed) and console.loging
+    const tasks = JSON.parse(localStorage.getItem('tasks'));
+
+    tasks.forEach(function(task) {
+      console.log(task);
+    });
+*/
