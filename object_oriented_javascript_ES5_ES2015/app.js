@@ -168,4 +168,63 @@
   // hasOwnPropety
   console.log(mary.hasOwnProperty('firstName')) // shows true
   console.log(mary.hasOwnProperty('getFullName')) // shows false
-  */
+*/
+
+
+/*
+// PROTOTYPAL INHERITANCE
+// What if you want to have one object or one object type inherit from another
+// PERSON CONSTRUCTOR
+function Person(firstName, lastName) {
+  this.firstName = firstName
+  this.lastName = lastName
+}
+
+// Create Person.prototype method - Greeting
+Person.prototype.greeting  = function() {
+  return `Hello ${this.firstName} ${this.lastName}`
+}
+
+// Create new Person
+const person1 = new Person('John', 'Doe')
+
+// console.log(person1.greeting()) // Shows greeting() as expected
+
+// CUSTOMER CONSTRUCTOR
+//// call() is a function that allows us to call another function from somewhere within the current context. First parameter is going to be "this" and then properties in the constructor that we will be inheriting
+  function Customer(firstName, lastName, phone, membership) {
+    Person.call(this, firstName, lastName)
+    this.phone = phone
+    this.membership = membership
+  }
+
+// Inherit the Person.prototype methods
+Customer.prototype = Object.create(Person.prototype)
+
+// Make Customer.prototype return "Customer"
+Customer.prototype.constructor = Customer
+
+// Create customer
+const customer1 = new Customer('Tom', 'Smith', '027-123-1234', 'Standard')
+
+console.log(customer1)
+// If "Make customer.protorype return Customer()" - above, line is commented out __proto__ will be "Person", 
+// otherwise __proto__ will be "Customer"
+
+console.log(customer1.greeting()) 
+//// If "Inherit the Person prototype methods" - above, line is commented out this function will throw errror,
+// otherwise it will work as for Person, see below:
+
+// Tom was not created under Person and is actually a Customer and even though greeting() is part of the Person.prototype we were able to call greeting() because of the link created through Object.create(Person.prototype)
+
+// You should also be able to overwrite Person.prototypes if, for example, you wanted a seperate greeting for Customers
+Customer.prototype.greeting = function() {
+  return `Hello ${this.firstName} ${this.lastName}, welcome to our company!`
+}
+
+console.log(customer1.greeting()) // Shows the new greeting directly above
+console.log(person1.greeting()) // Shows as the original Person.greeting()
+
+// Now, any function added to the Person will be accessable to the Customer and that is how we can do inheritance
+*/
+
