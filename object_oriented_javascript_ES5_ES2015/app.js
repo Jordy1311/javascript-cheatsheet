@@ -3,7 +3,7 @@
 // Most important things in object oriented is the "Constructor" and "This" keywords
 // ES6 classes can acomplish the same things as these under ES5 but they are syntatic sugar (convenience) - it is good to know how they work under-the-hood :)
 
-// Object literals - this can be good if you want to deal with 1 object
+// OBJECT LITERALS - this can be good if you want to deal with 1 object
   // const brad = {
   //   name: 'Brad',
   //   age: 30
@@ -11,7 +11,7 @@
 
   // console.log(brad)
 
-// Constructor - can be used to create multiple instances of a similar object
+// CONSTRUCTOR - can be used to create multiple instances of a similar object
 // eg: Person constructor //// - contstructor name should start with capital
   function Person(name, dob) {
     this.name = name;
@@ -47,7 +47,7 @@
 // There is not many reasons to do this and reasons not to
 // Slower code, issues using === comparing value and type
 
-// Strings
+// STRINGS
   const name1 = 'Jeff'
   const name2 = new String('Jeff');
 
@@ -73,7 +73,7 @@
   // if the name2's if statement checked name2 against == rather than === it would be a true statement
 
 
-// Other examples
+// OTHER EXAMPLES
   const num1 = 5
   const num2 = new Number(5)
 
@@ -87,16 +87,85 @@
 
     console.log(getSum2(1,3))
 
-  // Object and Array example - no difference with output as already objects, just longer syntax
+  // OBJECT AND ARRAY EXAMPLE - no difference with output as already objects, just longer syntax
   const john1 = {name: 'John'}
   const john2 = new Object({name: 'John'})
 
   const arr1 = [1,2,3,4]
   const arr2 = new Array(5,6,7,8)
 
-  // Regular Expressions - will be confusing if you have not covered REs yet
+  // REGULAR EXPRESSIONS - will be confusing if you have not covered REs yet
   const re1 = /\w+/ // this RE is looking for a word character that occures 1 or more times
   const re2 = new RegExp ('\\w+') // when using RE like this you need to escape the backslash
 
   console.log(re2)
+  */
+
+
+/*
+// PROTOTYPES EXPLAINED
+//// Languages like PHP use classes instead of this
+// Each object in Javascript has a prototype and a prototype is an object itself
+// All objects inherit their properties and methods from their prototype
+
+// If you are dealing with object literals, for example, your inheriting from a prototype called object.prototype
+// If you are dealing with objects that were made using a constructor, eg Person from previous, your inheriting from Person.prototype 
+
+// There is a thing called a prototype chain
+
+// PERSON CONSTRUCTOR
+  function Person(firstName, lastName, dob) {
+    this.firstName = firstName
+    this.lastName = lastName
+    this.birthday = new Date(dob)
+    // this.calculateAge = function(){
+    //   const diff = Date.now() - this.birthday.getTime()
+    //   const ageDate = new Date(diff)
+    //   return Math.abs(ageDate.getUTCFullYear() - 1970)
+    // }
+  }
+  
+  const jordan = new Person('Jordan', 'Cooper', '11/13/1995')
+  const mary = new Person('Mary', 'Johnson', '09/01/1996')
+
+  console.log(mary)
+
+  // within the mary object there is the firstName, lastName, birthday but also __proto__ and within that another __proto__ which represents the object prototype
+
+  // looking at the Person constructor it is clear that each person needs to have their own firstName, lastName and dob so these should be actual properties of the Person. calculateAge will be the same for every person - there is no difference between jordan and mary's calculateAge function. So this is something that we should put into the prototype not directly into the object
+  
+  // DECLEARING CALCULATE AGE AS A PROTOTYPE METHOD
+  Person.prototype.calculateAge = function() {
+    const diff = Date.now() - this.birthday.getTime()
+    const ageDate = new Date(diff)
+    return Math.abs(ageDate.getUTCFullYear() - 1970)
+  }
+
+  console.log(jordan)
+
+  // now calculateAge() is located within the Person.prototype and can still be called as before
+
+  console.log(jordan.calculateAge()) // successfully calls calculateAge()
+
+  // NEW PROTORYPE METHOD - Get full name
+  Person.prototype.getFullName = function() {
+    return `${this.firstName} ${this.lastName}`
+  }
+
+  console.log(mary.getFullName())
+  // "We're not flooding our constructor with functions"
+
+  // NEW PROTOTYPE METHOD - Gets married (that manipulates data)
+  Person.prototype.getsMarried = function(newLastName) {
+    this.lastName = newLastName
+  }
+
+  mary.getsMarried('Smith')
+  console.log(mary.getFullName())
+  // we were getting Mary Johnson now using this new prototype method we have changed the full name to Mary Smith
+
+  // OBJECT PROTOTYPE
+  // hasOwnPropety
+  console.log(mary.hasOwnProperty('firstName')) // shows true
+  console.log(mary.hasOwnProperty('getFullName')) // shows false
   */
