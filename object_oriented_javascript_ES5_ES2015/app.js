@@ -228,3 +228,44 @@ console.log(person1.greeting()) // Shows as the original Person.greeting()
 // Now, any function added to the Person will be accessable to the Customer and that is how we can do inheritance
 */
 
+
+/*
+// USING OBJECT.CREATE
+// another way to create objects - using object.create
+// we are going to be able to create prototypes inside of a parent-like object and then have different properties with different prototype methods/prototype functions
+
+// This is going to be the object with different prototype methods
+const personPrototypes = {
+  greeting: function() {
+    return `Hello there ${this.firstName} ${this.lastName}`
+  },
+  getsMarried: function(newLastName) {
+    this.lastName = newLastName
+  }
+}
+
+// Object.create will take in our prototypes and create the object with those prototypes
+const mary = Object.create(personPrototypes)
+mary.firstName = 'Mary'
+mary.lastName = 'Williams'
+mary.age = 30
+
+console.log(mary) // you can see the properties above
+console.log(mary.greeting()) //  this will work as the object above is pulling the methods from personPrototypes
+
+mary.getsMarried('Smith')
+console.log(mary)
+console.log(mary.greeting()) // all works as per properties in object and methods in personPrototypes
+
+// New object - another way to achieve above
+const jordan = Object.create(personPrototypes, {
+  firstName: {value: 'Jordan'},
+  lastName: {value: 'Cooper'},
+  age: {value: 25}
+})
+
+console.log(jordan)
+console.log(jordan.greeting())
+jordan.getsMarried('Smith') // This didnt work and I think it might be because of how i init object jordan??
+console.log(jordan.greeting())
+*/
