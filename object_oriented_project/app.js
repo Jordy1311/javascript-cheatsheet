@@ -34,9 +34,9 @@ UI.prototype.showAlert = function(message, className) {
     div.appendChild(document.createTextNode(message))
     // get parent
     const container = document.querySelector('.container')
-    const form = document.querySelector('#book-form')
+    const alertLocation = document.querySelector('#alert-location')
     // insert alert
-    container.insertBefore(div, form)
+    container.insertBefore(div, alertLocation)
     // timeout after 3 sec
     setTimeout(function() {
         document.querySelector('.alert').remove()
