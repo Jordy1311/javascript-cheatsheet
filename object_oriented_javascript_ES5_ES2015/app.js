@@ -274,3 +274,48 @@
   jordan.getsMarried('Smith') // This didnt work and I think it might be because of how i init object jordan??
   console.log(jordan.greeting())
 */
+
+
+/*
+// ES6 Classes
+// This is how classes work in ES6 - bit more straight forward. Nothing directly associated with one object or "parent object" which is then inherited - there is a class and you associate objects with that class in order to pass on the methods/properties
+class Person {
+  constructor(firstName, lastName, dob) {
+    this.firstName = firstName
+    this.lastName = lastName
+    this.birthday = new Date(dob)
+  }
+
+  greeting() {
+    return `Hello there ${this.firstName} ${this.lastName}`
+  }
+
+  calculateAge() {
+    const diff = Date.now() - this.birthday.getTime()
+    const ageDate = new Date (diff)
+    return Math.abs(ageDate.getUTCFullYear() - 1970)
+  }
+
+  getsMarried(newLastName) {
+    this.lastName = newLastName
+  }
+
+  // STATIC METHODS - see below
+  static addNumbers(x, y) {
+    return x + y
+  }
+}
+
+const mary = new Person('Mary', 'Williams', '11/13/1980')
+console.log(mary)
+console.log(mary.greeting())
+console.log(mary.calculateAge())
+
+mary.getsMarried('Smith')
+console.log(mary.greeting())
+
+// STATIC METHODS - one that you can use without instantiating an object
+console.log(Person.addNumbers(1, 2))
+*/
+
+
