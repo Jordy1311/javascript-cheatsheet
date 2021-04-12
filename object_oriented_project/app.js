@@ -18,7 +18,7 @@ UI.prototype.addBookToList = function(book) {
     <td>${book.title}</td>
     <td>${book.author}</td>
     <td>${book.isbn}</td>
-    <td><a href="#" class="delete">X</a></td>
+    <td><a href="#" class="delete" style="text-decoration: none;">x</a></td>
     `
 
     list.appendChild(row)
@@ -74,7 +74,7 @@ document.getElementById('book-form').addEventListener('submit',
 
         // validate
         if(title === '' || author === '' || isbn === '') {
-            ui.showAlert('Stop! Please fill in all fields.', 'error')
+            ui.showAlert('Please fill in all fields.', 'error')
         } else {
             // add book to list
             ui.addBookToList(book)
@@ -98,7 +98,7 @@ document.getElementById('book-list').addEventListener('click', function(e) {
     ui.deleteBook(e.target)
 
     // show message
-    ui.showAlert('Book removed!', 'success')
+    ui.showAlert('Book removed!', 'warning')
 
     e.preventDefault
 })

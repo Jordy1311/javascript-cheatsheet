@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" integrity="sha512-5fsy+3xG8N/1PV5MIJz9ZsWpkltijBI48gBzQ/Z2eVATePGHOkMIn+xTDHIfTZFVb9GMpflF2wOWItqxAP2oLQ==" crossorigin="anonymous" />
     <style>
-        .success, .error {
+        .success, .error, .warning {
             color: white;
             padding: 5px;
             margin: 5px 0 15px 0;
@@ -14,18 +14,21 @@
         }
 
         .success {
-            background: #5cb85c;
+            background: #00C851;
         }
 
         .error {
-            background: #ef5350;
+            background: #ff4444;
+        }
+        .warning {
+            background: #ffbb33
         }
     </style>
     <title>book list</title>
 </head>
 <body>
     <div class="container">
-        <h1>Add Book</h1>
+        <h1>Master Book List</h1>
         <form id="book-form">
             <div>
                 <label for="title">Title</label>
