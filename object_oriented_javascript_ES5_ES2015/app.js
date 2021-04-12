@@ -277,7 +277,7 @@
 
 
 /*
-// ES6 Classes
+// ES6 CLASSES
 // This is how classes work in ES6 - bit more straight forward. Nothing directly associated with one object or "parent object" which is then inherited - there is a class and you associate objects with that class in order to pass on the methods/properties
 class Person {
   constructor(firstName, lastName, dob) {
@@ -319,3 +319,38 @@ console.log(Person.addNumbers(1, 2))
 */
 
 
+/*
+// ES6 SUB-CLASSES
+class Person {
+  constructor(firstName, lastName) {
+    this.firstName = firstName
+    this.lastName = lastName
+  }
+
+  greeting() {
+    return `Hello there ${this.firstName} ${this.lastName}`
+  }
+}
+
+class Customer extends Person {
+  constructor(firstName, lastName, phone, membership) {
+    super(firstName, lastName) // this just calls the parent class' constructor - takes in parameters for parent class constructor
+
+    // any parameter-specific properties to this class goes after super()
+    this.phone = phone
+    this.membership = membership
+  }
+
+  // you can also make customer specific methods as well
+  static getMembershipCost() {
+    return 500
+  }
+}
+
+const john =  new Customer('John', 'Doe', '027-123-4567' , 'Standard')
+console.log(john) // proto = person because we are extending person class but constructor = customer
+console.log(john.greeting()) // there is no greeting method in customer but because we extended person we can use this
+
+console.log(Customer.getMembershipCost())
+// because we have extended Person to Customer we can call Person methods from object constructed from Customer but not the other way around - it is one way
+*/
