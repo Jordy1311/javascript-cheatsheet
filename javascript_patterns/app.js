@@ -1,4 +1,5 @@
 //// MODULE & REVEALING MODULE PATTERN
+// is broken up code into modules that have private methods/functions and then subsequently have parts that are revealed
 /* basic structure
     (function() {
         // Declear private vars & functions
@@ -67,4 +68,40 @@ const ItemCtrl = (function() {
 // accessing both of these as has been made available above
 ItemCtrl.add({id: 1, name: 'John'});
 console.log(ItemCtrl.get(1));
+*/
+
+
+/*
+////  SINGLETON PATTERN
+// you cant have more than 1 unique instance from this pattern
+// a singleton object is an immediate anon. function and it can only return one instance of an object at a time - repeated calls to the constructor will return the same instance -  like the module patter it has a private functions
+// one user object created at a time - prevent two users being made at once
+// often frowned upon because they give a global point of access rather than embrasing encapsulation
+// hard to debug
+
+const Singleton = (function() {
+    let instance;
+
+    function createInstance() {
+        const object = new Object({name: 'John'});
+        return object;
+    }
+
+    return {
+        getInstance: function() {
+            if(!instance) {
+                instance = createInstance();
+            }
+            return instance;
+        }
+    }
+})();
+
+const instanceA = Singleton.getInstance();
+const instanceB = Singleton.getInstance();
+
+console.log(instanceA);
+console.log(instanceB);
+console.log(instanceA === instanceB);
+// you can have more than one instance from the Singleton but they will be the same as above
 */
