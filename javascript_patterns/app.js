@@ -296,3 +296,98 @@ john.send('Hello James', james);
 james.send('Ohh! Hi John!', john);
 joe.send('Can I get in on this?')
 */
+
+
+/*
+// STATE PATTERN
+// another behavoural pattern
+// redux like
+// we will have a state which we can change throughout the script
+// if you want to do or change certain things in certain states you can do that with this
+
+const PageState = function() {
+    let currentState = new homeState(this);
+
+    this.init = function() {
+        this.change(new homeState);
+    }
+
+    this.change = function(state) {
+        currentState = state;
+    }
+};
+
+// home state
+const homeState = function(page) {
+    document.querySelector('#heading').textContent = null;
+    document.querySelector('#content').innerHTML = `
+        <div class="jumbotron">
+        <h1 class="display-4">Hello, world!</h1>
+        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <hr class="my-4">
+        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <p class="lead">
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        </p>
+        </div>
+    `;
+};
+
+// about state
+const aboutState = function(page) {
+    document.querySelector('#heading').textContent = 'about us';
+    document.querySelector('#content').innerHTML = `
+        <p>this is some information about us. we are very interesting and you should stick around</p>
+    `;
+};
+
+// contact state
+const contactState = function(page) {
+    document.querySelector('#heading').textContent = 'contact us';
+    document.querySelector('#content').innerHTML = `
+        <form>
+            <div class="form-group">
+                <label>name</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>email address</label>
+                <input type="email" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-outline-primary">submit</button>
+        </form>
+    `;
+};
+
+// instantiate pageState
+const page = new PageState();
+
+// init first state
+page.init();
+
+// UI vars
+const home = document.getElementById('home'),
+    about = document.getElementById('about'),
+    contact = document.getElementById('contact');
+
+// home event listener
+home.addEventListener('click', (e) => {
+    page.change(new homeState);
+    e.preventDefault();
+});
+
+// about event listener
+about.addEventListener('click', (e) => {
+    page.change(new aboutState);
+    e.preventDefault();
+});
+
+// contact event listener
+contact.addEventListener('click', (e) => {
+    page.change(new contactState);
+    e.preventDefault();
+});
+
+// not really an practical example
+// usually you would have an edit/list state
+*/
