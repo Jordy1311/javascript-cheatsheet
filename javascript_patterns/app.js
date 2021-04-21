@@ -235,3 +235,64 @@ const getCurSeconds = function() {
     console.log(`Current seconds: ${new Date().getSeconds()}`)
 }
 */
+
+
+/*
+// MEDIATOR PATTERN
+// another behavoural pattern
+// is an interface to interacte with what are called collegues which are mediated objects
+// best example is a chat room
+
+// in this example the chatroom is the mediator and the users are the collegues
+const User = function(name) {
+    this.name = name;
+    this.chatroom = null;
+}
+
+User.prototype = {
+    send: function (message, to) {
+        this.chatroom.send(message, this, to);
+    },
+    receive: function(message, from) {
+        console.log(`${from.name} to ${this.name}: ${message}`)
+    }
+}
+
+const Chatroom = function() {
+    let users = {}; // list of users
+
+    return {
+        register: function(user) {
+            users[user.name] = user;
+            user.chatroom = this;
+        },
+        send: function(message, from, to) {
+            if(to) {
+                // single user message
+                to.receive(message, from)
+            } else {
+                // mass message
+                for(key in users) {
+                    if(users[key] !== from) {
+                        users[key].receive(message, from);
+                    }
+                }
+            }
+        }
+    }
+}
+
+const john = new User('John');
+const james = new User('James');
+const joe = new User('Joe');
+
+const chatroom = new Chatroom();
+
+chatroom.register(john);
+chatroom.register(james);
+chatroom.register(joe);
+
+john.send('Hello James', james);
+james.send('Ohh! Hi John!', john);
+joe.send('Can I get in on this?')
+*/
